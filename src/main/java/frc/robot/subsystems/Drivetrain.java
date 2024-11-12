@@ -9,9 +9,9 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Drivetrain extends SubsystemBase{
     private final TalonFX leftCommander, rightCommander, leftFollower, rightFollower;
     public Drivetrain(){
-        leftCommander = new TalonFX(0);
+        leftCommander = new TalonFX(2);
         leftFollower = new TalonFX(1);
-        rightCommander = new TalonFX(2);
+        rightCommander = new TalonFX(4);
         rightFollower = new TalonFX(3);
         leftCommander.setNeutralMode(NeutralModeValue.Brake);
         leftFollower.setNeutralMode(NeutralModeValue.Brake);

@@ -1,12 +1,14 @@
 package frc.robot.commands;
 
+import java.util.function.DoubleSupplier;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Drivetrain;
 
 public class TankDriveCommand extends Command{
     private final Drivetrain drivetrain;
-    private final double left, right;
-    public TankDriveCommand(double left, double right, Drivetrain drivetrain){
+    private final DoubleSupplier left, right;
+    public TankDriveCommand(DoubleSupplier left, DoubleSupplier right, Drivetrain drivetrain){
         this.drivetrain = drivetrain;
         this.left = left;
         this.right = right;
@@ -19,7 +21,7 @@ public class TankDriveCommand extends Command{
 
     @Override
     public void execute(){
-        drivetrain.drive(left, right);
+        drivetrain.drive(left.getAsDouble(), right.getAsDouble());
     }
 
     @Override
